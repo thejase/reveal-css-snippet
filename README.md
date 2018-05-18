@@ -11,6 +11,7 @@ npm install --save reveal-css-snippet
 ```
 
 ## Demo
+
 Play with it on [Codepen](http://codepen.io/soluml/pen/QbQmoa)!
 
 ## Usage
@@ -23,9 +24,9 @@ Optionally, you can pass in an object with two properties defined below. Both ar
 RevealCSSSnippet({
     //el is a DOM node that you wish to scope the CSS too. The scoping is done via attribute selector, so beware of specificity issues with existing styles. The default is no scoping, which allows you to write CSS to target anything in the presentation.
     el: document.getElementById('targetElement'),
-    
+
     //cssValue is the default CSS to be loaded into the block at initialization. The default is empty string.
-    cssValue: "background: #ff0;\r\nwidth: 500px;\r\nheight: 50px;"
+    cssValue: 'background: #ff0;\r\nwidth: 500px;\r\nheight: 50px;',
 });
 ```
 
@@ -34,6 +35,7 @@ RevealCSSSnippet({
 ### Presentation Wide CSS Snippet:
 
 **_HTML:_**
+
 ```html
 <!-- This section is a slide. -->
 <section id="csssnip-slide">
@@ -42,6 +44,7 @@ RevealCSSSnippet({
 ```
 
 **_In Reveal.initialize [index.html]:_**
+
 ```js
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
@@ -63,6 +66,7 @@ Reveal.initialize({
 ### Element Scoped CSS Snippet:
 
 **_HTML:_**
+
 ```html
 <!-- This section is a slide. -->
 <section id="csssnip-slide">
@@ -72,6 +76,7 @@ Reveal.initialize({
 ```
 
 **_In Reveal.initialize [index.html]:_**
+
 ```js
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
@@ -97,4 +102,4 @@ The MIT License (MIT)
 
 ## Author
 
-[![twitter/soluml](http://www.gravatar.com/avatar/832fa8588ea749ba2a83672fa36b8981?s=100)](https://twitter.com/soluml "Follow @soluml on Twitter")
+[![twitter/soluml](http://www.gravatar.com/avatar/832fa8588ea749ba2a83672fa36b8981?s=100)](https://twitter.com/soluml 'Follow @soluml on Twitter')

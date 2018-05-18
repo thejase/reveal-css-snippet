@@ -1,18 +1,13 @@
 {
     "name": "reveal-css-snippet",
-    "version": "0.1.2",
-    "description": "A Reveal.js plugin that allows live CSS editing in code blocks.",
+    "version": "0.2.0",
+    "description":
+        "A Reveal.js plugin that allows live CSS editing in code blocks.",
     "license": {
         "name": "MIT"
     },
     "main": "css-snippet.js",
-    "keywords": [
-        "Reveal.js",
-        "css",
-        "snippet",
-        "live",
-        "code"
-    ],
+    "keywords": ["Reveal.js", "css", "snippet", "live", "code"],
     "author": {
         "name": "Benjamin Solum",
         "email": "benjamin@soluml.com",
@@ -20,7 +15,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/soluml/reveal-css-snippet.git"
+        "url": "git+https://github.com/thejase/reveal-css-snippet.git"
     },
     "bugs": {
         "url": "https://github.com/soluml/reveal-css-snippet/issues"

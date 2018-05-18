@@ -1,4 +1,4 @@
-window.RevealCSSSnippet = function (O) {
+window.RevealCSSSnippet = function(O) {
     'use strict';
 
     var pre = document.createElement('pre'),
@@ -7,13 +7,13 @@ window.RevealCSSSnippet = function (O) {
         ts;
 
     do {
-        ts = parseInt((Math.random() * 100000), 10);
+        ts = parseInt(Math.random() * 100000, 10);
     } while (document.getElementById('csssnippet-' + ts));
 
     function addEvent(el, type, fn) {
         if (el.attachEvent) {
             el['e' + type + fn] = fn;
-            el[type + fn] = function () {
+            el[type + fn] = function() {
                 el['e' + type + fn](window.event);
             };
             el.attachEvent('on' + type, el[type + fn]);
@@ -21,11 +21,9 @@ window.RevealCSSSnippet = function (O) {
             el.addEventListener(type, fn, false);
         }
     }
-    
+
     function insertTextAtCursor(text) {
-        var sel,
-            range,
-            textNode;
+        var sel, range, textNode;
 
         if (window.getSelection) {
             sel = window.getSelection();
@@ -45,7 +43,7 @@ window.RevealCSSSnippet = function (O) {
             range.pasteHTML(text);
         }
     }
-    
+
     function keyup() {
         var stl = document.getElementById('csssnippet-' + ts),
             val = (txt.textContent || txt.innerText).replace(/\s/g, ' ').trim();
@@ -60,7 +58,7 @@ window.RevealCSSSnippet = function (O) {
     function keydown(e) {
         var key = e.which || e.keyCode || e.charCode,
             val = txt.textContent || txt.innerText;
-        
+
         //Tab Button
         if (key === 9) {
             insertTextAtCursor('  ');
@@ -68,8 +66,11 @@ window.RevealCSSSnippet = function (O) {
         }
     }
 
+    var head = O.el || document.head;
+
     stl.setAttribute('id', 'csssnippet-' + ts);
-    document.head.appendChild(stl);
+    O.scope && stl.setAttribute('scoped', '');
+    (O.scope || document.head).appendChild(stl);
     txt.setAttribute('contenteditable', 'true');
     txt.setAttribute('class', 'css');
     txt.setAttribute('autocapitalize', 'off');
@@ -84,7 +85,7 @@ window.RevealCSSSnippet = function (O) {
     if (O.el) {
         O.el.setAttribute('data-csssnippet', ts);
     }
-    
+
     if (O.cssValue) {
         txt.appendChild(document.createTextNode(O.cssValue));
         keyup();
