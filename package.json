@@ -1,6 +1,6 @@
 {
     "name": "reveal-css-snippet",
-    "version": "0.1.3",
+    "version": "0.2.0",
     "description":
         "A Reveal.js plugin that allows live CSS editing in code blocks.",
     "license": {

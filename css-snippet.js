@@ -66,8 +66,11 @@ window.RevealCSSSnippet = function(O) {
         }
     }
 
+    var head = O.el || document.head;
+
     stl.setAttribute('id', 'csssnippet-' + ts);
-    document.head.appendChild(stl);
+    O.scope && stl.setAttribute('scoped', '');
+    (O.scope || document.head).appendChild(stl);
     txt.setAttribute('contenteditable', 'true');
     txt.setAttribute('class', 'css');
     txt.setAttribute('autocapitalize', 'off');
